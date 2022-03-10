@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.MotionLayoutToolbar" parent="Theme.Base">
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="backgroundPrimary">@color/black</item>
+        <item name="textPrimary">@color/white</item>
+        <item name="borderPrimary">@color/gray3</item>
+    </style>
+</resources>

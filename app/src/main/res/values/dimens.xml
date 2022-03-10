@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="default_padding">24dp</dimen>
+
+    <dimen name="toolbar_expanded_height">160dp</dimen>
+    <dimen name="toolbar_home_as_up_padding">72dp</dimen>
+</resources>

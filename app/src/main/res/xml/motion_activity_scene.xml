@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="300">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:maxAcceleration="50"
+            app:touchAnchorId="@+id/toolbar_height"
+            app:touchAnchorSide="bottom" />
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="0"
+                app:motionTarget="@id/expanded_title" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="50"
+                app:motionTarget="@id/expanded_title" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="85"
+                app:motionTarget="@id/expanded_title" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="100"
+                app:motionTarget="@id/expanded_title" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="0"
+                app:motionTarget="@id/collapsed_title" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="80"
+                app:motionTarget="@id/collapsed_title" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="100"
+                app:motionTarget="@id/collapsed_title" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="0"
+                app:motionTarget="@id/divider" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="60"
+                app:motionTarget="@id/divider" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="80"
+                app:motionTarget="@id/divider" />
+
+            <KeyAttribute
+                android:alpha="1"
+                app:framePosition="100"
+                app:motionTarget="@id/divider" />
+
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/toolbar_height"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbar_expanded_height"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/scrollable"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_height" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/toolbar_height"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/scrollable"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_height" />
+    </ConstraintSet>
+</MotionScene>
